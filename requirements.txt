@@ -5,3 +5,9 @@ numpy
 tensorflow
 scikit-learn
 pydantic
+numpy
+pandas
+xgboost
+lightgbm
+nltk
+spacy
