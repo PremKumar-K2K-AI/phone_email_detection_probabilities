@@ -10,8 +10,6 @@ vectorizer = joblib.load("tfidf_vectorizer.pkl")
 log_model = joblib.load("logistic_model.pkl")
 rf_model = joblib.load("random_forest.pkl")
 svm_model = joblib.load("svm_model.pkl")
-xgb_model = joblib.load("xgb_model.pkl")
-lgb_model = joblib.load("lgb_model.pkl")
 tokenizer = joblib.load("tokenizer.pkl")
 lstm_model = load_model("lstm_model.h5")
 
@@ -52,8 +50,6 @@ def classify_text(request: TextRequest):
         "logistic_regression": predict_sensitive_info(text, log_model, vectorizer),
         "random_forest": predict_sensitive_info(text, rf_model, vectorizer),
         "svm": predict_sensitive_info(text, svm_model, vectorizer),
-        "xgboost": predict_sensitive_info(text, xgb_model, vectorizer),
-        "lightgbm": predict_sensitive_info(text, lgb_model, vectorizer),
         "lstm": predict_sensitive_info(text, lstm_model, tokenizer=tokenizer, lstm=True)
     }
 
